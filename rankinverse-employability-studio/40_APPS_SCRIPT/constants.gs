@@ -1,0 +1,34 @@
+/**
+ * constants.gs
+ * RankinVerse Employability Studio
+ */
+const APP_CONFIG = Object.freeze({
+  APP_VERSION: '0.1.0',
+  APP_NAME: 'RankinVerse Employability Studio',
+  TIME_ZONE: 'America/New_York',
+  SITE: {
+    BASE_URL: 'REPLACE_WITH_GOOGLE_SITE_BASE_URL',
+    DEFAULT_ENTRY_PAGE: 'start-here',
+    MODULES_PATH: '/modules',
+    FALLBACK_PATH: '/start-here'
+  },
+  DRIVE: {
+    ROOT_FOLDER_ID: 'REPLACE_WITH_ROOT_FOLDER_ID',
+    STUDENTS_FOLDER_ID: 'REPLACE_WITH_STUDENTS_FOLDER_ID',
+    TEMPLATES_FOLDER_ID: 'REPLACE_WITH_TEMPLATES_FOLDER_ID',
+    MEDIA_FOLDER_ID: 'REPLACE_WITH_MEDIA_FOLDER_ID'
+  },
+  TEMPLATES: {
+    STUDENT_WORKBOOK_DOC_ID: 'REPLACE_WITH_STUDENT_WORKBOOK_DOC_ID',
+    LEARNING_DECK_SLIDES_ID: 'REPLACE_WITH_LEARNING_DECK_SLIDES_ID',
+    SCENARIO_WORKBOOK_DOC_ID: 'REPLACE_WITH_SCENARIO_WORKBOOK_DOC_ID'
+  },
+  SHEETS: {
+    ROSTER: { SPREADSHEET_ID: 'REPLACE_WITH_ROSTER_SPREADSHEET_ID', SHEET_NAME: 'EmployabilityStudio_Roster' },
+    PROGRESS: { SPREADSHEET_ID: 'REPLACE_WITH_PROGRESS_SPREADSHEET_ID', SHEET_NAME: 'EmployabilityStudio_Progress' },
+    SETTINGS: { SPREADSHEET_ID: 'REPLACE_WITH_SETTINGS_SPREADSHEET_ID', SHEET_NAME: 'EmployabilityStudio_Settings' }
+  },
+  ACTIONS: Object.freeze({ START: 'start', CONTINUE: 'continue', OPEN_MODULE: 'open_module', MARK_COMPLETE: 'mark_complete', HEALTHCHECK: 'healthcheck' }),
+  STATUS: Object.freeze({ ACTIVE: 'active', INACTIVE: 'inactive', COMPLETE: 'complete', INCOMPLETE: 'incomplete' }),
+  DEFAULTS: Object.freeze({ PHASE_1_ENABLED: true, PHASE_2_ENABLED: false, PHASE_3_ENABLED: false, ACTIVE_MODE: 'production' })
+});
