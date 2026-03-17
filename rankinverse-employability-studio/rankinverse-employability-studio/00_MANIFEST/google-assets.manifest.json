@@ -1,0 +1,29 @@
+{
+  "project": {
+    "id": "rankinverse-employability-studio",
+    "title": "RankinVerse Employability Studio",
+    "version": "0.1.0",
+    "status": "draft",
+    "delivery_model": "google-site-front-end",
+    "runtime_model": "google-workspace-per-student-provisioning",
+    "config_role": "single-shared-asset-manifest"
+  },
+  "site": {
+    "site_name": "RankinVerse Employability Studio",
+    "site_base_url": "REPLACE_WITH_GOOGLE_SITE_BASE_URL"
+  },
+  "sheets": {
+    "roster": {"name": "EmployabilityStudio_Roster", "spreadsheet_id": "REPLACE_WITH_ROSTER_SPREADSHEET_ID"},
+    "progress": {"name": "EmployabilityStudio_Progress", "spreadsheet_id": "REPLACE_WITH_PROGRESS_SPREADSHEET_ID"},
+    "settings": {"name": "EmployabilityStudio_Settings", "spreadsheet_id": "REPLACE_WITH_SETTINGS_SPREADSHEET_ID"}
+  },
+  "drive": {
+    "root_folder_id": "REPLACE_WITH_ROOT_FOLDER_ID",
+    "students_folder_id": "REPLACE_WITH_STUDENTS_FOLDER_ID",
+    "templates_folder_id": "REPLACE_WITH_TEMPLATES_FOLDER_ID",
+    "media_folder_id": "REPLACE_WITH_MEDIA_FOLDER_ID"
+  },
+  "templates": {
+    "student_default_set": ["student-workbook", "learning-deck", "scenario-workbook"]
+  }
+}
