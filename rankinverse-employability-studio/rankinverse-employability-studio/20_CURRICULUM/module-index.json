@@ -1,0 +1,60 @@
+{
+  "project": {
+    "id": "rankinverse-employability-studio",
+    "title": "RankinVerse Employability Studio",
+    "version": "0.1.0",
+    "status": "draft",
+    "delivery_model": "google-site-front-end",
+    "runtime_model": "google-workspace-per-student-provisioning",
+    "vendor_repo_policy": "all-existing-library-repos-read-only-no-direct-integration"
+  },
+  "taxonomy": {
+    "status_tags": ["SOURCE_GROUNDED", "PROGRAM_DEFINED", "NEEDS_SOURCE_UPLOAD"],
+    "module_types": ["compliance", "safety", "employability", "leadership", "career_readiness"],
+    "asset_types": ["site_page", "slides", "doc", "form", "sheet", "image_pack", "facilitator_guide", "scenario_set"]
+  },
+  "site_navigation": [
+    {"id":"home","title":"Home"},
+    {"id":"start-here","title":"Start Here"},
+    {"id":"modules","title":"Modules"},
+    {"id":"scenarios","title":"Scenarios"},
+    {"id":"progress","title":"Progress"},
+    {"id":"resources","title":"Resources"},
+    {"id":"rankinverse-guides","title":"RankinVerse Guides"},
+    {"id":"facilitator-portal","title":"Facilitator Portal"}
+  ],
+  "phases": [
+    {"id":"phase-1","title":"Compliance Core Launch","module_ids":["M01","M02","M03","M04","M05"]},
+    {"id":"phase-2","title":"Employability Core Expansion","module_ids":["M06","M07","M08","M09","M10"]},
+    {"id":"phase-3","title":"Leadership and Career Extension","module_ids":["M11","M12","M13"]}
+  ],
+  "modules": [
+    {"id":"M01","slug":"worker-rights-and-employer-responsibilities","title":"Worker Rights and Employer Responsibilities","status":"SOURCE_GROUNDED","module_type":"compliance","phase":"phase-1","strand":"Compliance Core","tone":"dry-procedural-direct","student_visible":true,"launch_priority":1},
+    {"id":"M02","slug":"reporting-hazards-complaints-and-non-retaliation","title":"Reporting Hazards, Complaints, and Non-Retaliation","status":"SOURCE_GROUNDED","module_type":"compliance","phase":"phase-1","strand":"Compliance Core","tone":"formal-compliance-oriented","student_visible":true,"launch_priority":2},
+    {"id":"M03","slug":"workplace-harassment-and-sexual-harassment","title":"Workplace Harassment and Sexual Harassment","status":"SOURCE_GROUNDED","module_type":"compliance","phase":"phase-1","strand":"Compliance Core","tone":"dry-neutral-policy-style","student_visible":true,"launch_priority":3},
+    {"id":"M04","slug":"emergency-action-fire-protection-and-prepared-response","title":"Emergency Action, Fire Protection, and Prepared Response","status":"SOURCE_GROUNDED","module_type":"safety","phase":"phase-1","strand":"Compliance Core","tone":"procedural-instructional","student_visible":true,"launch_priority":4},
+    {"id":"M05","slug":"worksite-awareness-hazards-and-safe-conduct","title":"Worksite Awareness, Hazards, and Safe Conduct","status":"SOURCE_GROUNDED","module_type":"safety","phase":"phase-1","strand":"Compliance Core","tone":"direct-practical-worksite-centered","student_visible":true,"launch_priority":5},
+    {"id":"M06","slug":"attendance-reliability-and-work-readiness","title":"Attendance, Reliability, and Work Readiness","status":"NEEDS_SOURCE_UPLOAD","module_type":"employability","phase":"phase-2","strand":"Employability Core","tone":"structured-practical","student_visible":true,"launch_priority":6},
+    {"id":"M07","slug":"conflict-in-the-workplace","title":"Conflict in the Workplace","status":"PROGRAM_DEFINED","module_type":"employability","phase":"phase-2","strand":"Employability Core","tone":"formal-practical-scenario-based","student_visible":true,"launch_priority":7},
+    {"id":"M08","slug":"teamwork-and-shared-responsibility","title":"Teamwork and Shared Responsibility","status":"PROGRAM_DEFINED","module_type":"employability","phase":"phase-2","strand":"Employability Core","tone":"practical-workplace-centered","student_visible":true,"launch_priority":8},
+    {"id":"M09","slug":"cost-of-labor-time-and-materials","title":"Cost of Labor, Time, and Materials","status":"NEEDS_SOURCE_UPLOAD","module_type":"employability","phase":"phase-2","strand":"Employability Core","tone":"dry-concrete-business-literate","student_visible":true,"launch_priority":9},
+    {"id":"M10","slug":"professional-conduct-and-workplace-standards","title":"Professional Conduct and Workplace Standards","status":"PROGRAM_DEFINED","module_type":"employability","phase":"phase-2","strand":"Employability Core","tone":"clear-direct-standards-based","student_visible":true,"launch_priority":10},
+    {"id":"M11","slug":"leadership-and-initiative","title":"Leadership and Initiative","status":"PROGRAM_DEFINED","module_type":"leadership","phase":"phase-3","strand":"Leadership and Career Extension","tone":"serious-practical-non-performative","student_visible":true,"launch_priority":11},
+    {"id":"M12","slug":"digital-citizenship-and-reputation","title":"Digital Citizenship and Reputation","status":"PROGRAM_DEFINED","module_type":"career_readiness","phase":"phase-3","strand":"Leadership and Career Extension","tone":"direct-cautionary","student_visible":true,"launch_priority":12},
+    {"id":"M13","slug":"career-readiness-and-interview-practice","title":"Career Readiness and Interview Practice","status":"PROGRAM_DEFINED","module_type":"career_readiness","phase":"phase-3","strand":"Leadership and Career Extension","tone":"structured-application-oriented","student_visible":true,"launch_priority":13}
+  ],
+  "student_launch_defaults": {
+    "provision_personal_folder": true,
+    "copy_module_assets_on_launch": true,
+    "track_progress_in_sheet": true,
+    "default_entry_page": "start-here",
+    "phase_1_enabled_by_default": true,
+    "phase_2_enabled_by_default": false,
+    "phase_3_enabled_by_default": false
+  },
+  "compliance_rules": {
+    "restricted_rankinverse_modules": ["M03"],
+    "no_humor_modules": ["M01","M02","M03","M04","M05"],
+    "source_required_modules": ["M01","M02","M03","M04","M05"]
+  }
+}
