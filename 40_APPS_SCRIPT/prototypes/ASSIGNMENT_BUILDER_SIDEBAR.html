@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 12px;
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        margin-top: 12px;
+      }
+      input, select, textarea {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 4px;
+      }
+      textarea {
+        min-height: 70px;
+      }
+      button {
+        margin-top: 16px;
+        width: 100%;
+        padding: 8px;
+      }
+      .note {
+        font-size: 12px;
+        margin-top: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Build Assignment Draft</h2>
+
+    <p class="note">
+      Teacher-facing prototype. Generated materials remain drafts until reviewed.
+    </p>
+
+    <label for="courseId">Course</label>
+    <select id="courseId">
+      <option value="CONDUIT_BENDING">Conduit Bending</option>
+      <option value="DC_THEORY">DC Theory</option>
+      <option value="WIRE_APPLICATIONS">Wire Applications</option>
+      <option value="CODE_PRACTICES">Code and Practices</option>
+      <option value="OSHA_10">OSHA-10hr</option>
+      <option value="PRINT_READING">Print Reading</option>
+      <option value="STUDIO_5000_EMULATE_3D">Studio 5000 / Emulate 3D</option>
+    </select>
+
+    <label for="title">Assignment Title</label>
+    <input id="title" type="text" placeholder="Example: Basic 90-Degree Bend">
+
+    <label for="unitOrTopic">Unit or Topic</label>
+    <input id="unitOrTopic" type="text" placeholder="Example: Basic bends">
+
+    <label for="technicalSkill">Technical Skill</label>
+    <textarea id="technicalSkill" placeholder="What should students get better at?"></textarea>
+
+    <label for="safetyLens">Safety Lens</label>
+    <select id="safetyLens">
+      <option>Pre-Task Hazard Prediction</option>
+      <option>Tool Readiness Check</option>
+      <option>Energy Awareness</option>
+      <option>Verification Before Action</option>
+      <option>Work Area Awareness</option>
+    </select>
+
+    <label for="leadershipLens">Leadership Lens</label>
+    <select id="leadershipLens">
+      <option>Quality Check Partner</option>
+      <option>Peer Explanation</option>
+      <option>Role Clarity</option>
+      <option>Communication Before Action</option>
+      <option>Handoff Readiness</option>
+    </select>
+
+    <label for="executiveFunctionLens">Executive-Function Lens</label>
+    <select id="executiveFunctionLens">
+      <option>Start Plan</option>
+      <option>Sequence Check</option>
+      <option>Materials Check</option>
+      <option>Evidence Check</option>
+      <option>Completion Check</option>
+    </select>
+
+    <label for="documentationHabit">Documentation Habit</label>
+    <textarea id="documentationHabit" placeholder="What should students record, label, calculate, explain, or submit?"></textarea>
+
+    <label for="reflectionPrompt">Reflection Prompt</label>
+    <textarea id="reflectionPrompt" placeholder="What should students reflect on after the task?"></textarea>
+
+    <button onclick="submitDraft()">Create Draft Record</button>
+
+    <p id="status" class="note"></p>
+
+    <script>
+      function submitDraft() {
+        var draft = {
+          courseId: document.getElementById('courseId').value,
+          title: document.getElementById('title').value,
+          unitOrTopic: document.getElementById('unitOrTopic').value,
+          technicalSkill: document.getElementById('technicalSkill').value,
+          safetyLens: document.getElementById('safetyLens').value,
+          leadershipLens: document.getElementById('leadershipLens').value,
+          executiveFunctionLens: document.getElementById('executiveFunctionLens').value,
+          documentationHabit: document.getElementById('documentationHabit').value,
+          reflectionPrompt: document.getElementById('reflectionPrompt').value
+        };
+
+        document.getElementById('status').textContent = 'Creating draft...';
+
+        google.script.run
+          .withSuccessHandler(function(message) {
+            document.getElementById('status').textContent = message;
+          })
+          .withFailureHandler(function(error) {
+            document.getElementById('status').textContent = 'Error: ' + error.message;
+          })
+          .createDraftFromSidebar(draft);
+      }
+    </script>
+  </body>
+</html>
