@@ -10,8 +10,13 @@
 function onOpen() {
   SpreadsheetApp.getUi()
     .createMenu('Electrical Trades OS')
+    .addItem('Setup Workbook', 'setupElectricalTradesOsWorkbook')
+    .addSeparator()
     .addItem('Open Teacher Dashboard', 'openTeacherDashboard')
-    .addItem('Build Assignment Draft', 'buildAssignmentDraftPrompt')
+    .addItem('Build Assignment Draft', 'openAssignmentBuilderSidebar')
+    .addItem('Create Sample Conduit Draft', 'createSampleConduitBendingDraft')
+    .addItem('Create Sample DC Theory Draft', 'createSampleDcTheoryDraft')
+    .addSeparator()
     .addItem('Open Review Queue', 'openReviewQueue')
     .addItem('Open Program Tracker', 'openProgramTracker')
     .addItem('Open Audit Log', 'openAuditLog')
@@ -34,15 +39,6 @@ function openProgramTracker() {
 
 function openAuditLog() {
   activateSheetByName_('Audit Log');
-}
-
-function buildAssignmentDraftPrompt() {
-  var ui = SpreadsheetApp.getUi();
-  ui.alert(
-    'Assignment Builder',
-    'Next MVP step: open a teacher-facing sidebar that collects course, topic, technical skill, safety lens, leadership lens, and executive-function scaffold. Generated output remains a draft until teacher review.',
-    ui.ButtonSet.OK
-  );
 }
 
 function runHealthCheck() {
