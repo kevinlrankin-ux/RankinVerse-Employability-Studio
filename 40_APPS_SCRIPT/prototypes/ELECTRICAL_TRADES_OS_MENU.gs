@@ -16,6 +16,7 @@ function onOpen() {
     .addItem('Build Assignment Draft', 'openAssignmentBuilderSidebar')
     .addItem('Create Sample Conduit Draft', 'createSampleConduitBendingDraft')
     .addItem('Create Sample DC Theory Draft', 'createSampleDcTheoryDraft')
+    .addItem('Generate Google Doc From Selected Assignment', 'generateGoogleDocFromActiveAssignmentRow')
     .addSeparator()
     .addItem('Open Review Queue', 'openReviewQueue')
     .addItem('Open Program Tracker', 'openProgramTracker')
