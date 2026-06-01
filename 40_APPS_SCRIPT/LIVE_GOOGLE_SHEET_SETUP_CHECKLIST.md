@@ -25,7 +25,10 @@ The first live prototype should let the instructor:
 7. create sample assignment drafts
 8. open the assignment builder sidebar
 9. create a custom draft record
-10. see audit log entries
+10. generate a teacher-reviewable Google Doc from an assignment row
+11. rebuild the Review Queue
+12. rebuild the Program Tracker
+13. see audit log entries
 
 ## Required Prototype Files
 
@@ -36,6 +39,8 @@ Copy these files into a bound Apps Script project:
 - `40_APPS_SCRIPT/prototypes/ASSIGNMENT_BUILDER_PROTOTYPE.gs`
 - `40_APPS_SCRIPT/prototypes/ASSIGNMENT_BUILDER_SIDEBAR_SERVER.gs`
 - `40_APPS_SCRIPT/prototypes/ASSIGNMENT_BUILDER_SIDEBAR.html`
+- `40_APPS_SCRIPT/prototypes/GOOGLE_DOC_GENERATOR_PROTOTYPE.gs`
+- `40_APPS_SCRIPT/prototypes/REVIEW_QUEUE_AND_TRACKER_PROTOTYPE.gs`
 
 ## Setup Steps
 
@@ -128,6 +133,33 @@ A new draft row appears in Assignments.
 
 A new audit row appears in Audit Log.
 
+### Step 11: Generate Google Doc
+
+Select an assignment row in the Assignments tab.
+
+Use menu:
+
+`Electrical Trades OS -> Generate Google Doc From Selected Assignment`
+
+Expected result:
+
+A teacher-reviewable Google Doc is created.
+
+The Google Doc link is written back to the selected assignment row.
+
+An audit row is added.
+
+### Step 12: Rebuild Review Queue and Program Tracker
+
+Use menu:
+
+- `Electrical Trades OS -> Rebuild Review Queue`
+- `Electrical Trades OS -> Rebuild Program Tracker`
+
+Expected result:
+
+Review Queue and Program Tracker tabs update from the Assignments tab.
+
 ## Pass Criteria
 
 The live prototype passes if:
@@ -140,7 +172,10 @@ The live prototype passes if:
 - sample drafts can be created
 - sidebar opens
 - custom draft can be created
-- audit log records creation events
+- Google Doc can be generated from a selected assignment row
+- review queue can be rebuilt
+- program tracker can be rebuilt
+- audit log records creation and export events
 - all generated work remains draft / teacher-only by default
 
 ## Fail Notes
@@ -153,6 +188,10 @@ Record any issue in the test log:
 - missing tabs
 - sidebar failed
 - draft did not write
+- Google Doc did not generate
+- Google Doc link did not write back
+- review queue did not rebuild
+- program tracker did not rebuild
 - audit row missing
 - confusing workflow
 - too many clicks
