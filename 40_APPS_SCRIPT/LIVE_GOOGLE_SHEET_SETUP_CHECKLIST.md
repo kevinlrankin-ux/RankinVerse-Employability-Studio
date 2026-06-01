@@ -26,9 +26,10 @@ The first live prototype should let the instructor:
 8. open the assignment builder sidebar
 9. create a custom draft record
 10. generate a teacher-reviewable Google Doc from an assignment row
-11. rebuild the Review Queue
-12. rebuild the Program Tracker
-13. see audit log entries
+11. mark an assignment ready, needs revision, or archived
+12. rebuild the Review Queue
+13. rebuild the Program Tracker
+14. see audit log entries
 
 ## Required Prototype Files
 
@@ -41,6 +42,13 @@ Copy these files into a bound Apps Script project:
 - `40_APPS_SCRIPT/prototypes/ASSIGNMENT_BUILDER_SIDEBAR.html`
 - `40_APPS_SCRIPT/prototypes/GOOGLE_DOC_GENERATOR_PROTOTYPE.gs`
 - `40_APPS_SCRIPT/prototypes/REVIEW_QUEUE_AND_TRACKER_PROTOTYPE.gs`
+- `40_APPS_SCRIPT/prototypes/REVIEW_STATUS_PROTOTYPE.gs`
+
+## Optional Menu Patch
+
+If the review actions are not already visible in the custom menu, apply the notes in:
+
+`40_APPS_SCRIPT/prototypes/REVIEW_STATUS_MENU_PATCH.md`
 
 ## Setup Steps
 
@@ -149,7 +157,23 @@ The Google Doc link is written back to the selected assignment row.
 
 An audit row is added.
 
-### Step 12: Rebuild Review Queue and Program Tracker
+### Step 12: Update Review Status
+
+Select an assignment row.
+
+Use one of the review status actions:
+
+- Mark Selected Assignment Ready
+- Mark Selected Assignment Needs Revision
+- Archive Selected Assignment
+
+Expected result:
+
+Review Status, Teacher Approved, and Next Action fields update.
+
+An audit row is added.
+
+### Step 13: Rebuild Review Queue and Program Tracker
 
 Use menu:
 
@@ -173,10 +197,11 @@ The live prototype passes if:
 - sidebar opens
 - custom draft can be created
 - Google Doc can be generated from a selected assignment row
+- selected assignment review status can be updated
 - review queue can be rebuilt
 - program tracker can be rebuilt
-- audit log records creation and export events
-- all generated work remains draft / teacher-only by default
+- audit log records creation, export, and review events
+- all generated work remains draft / teacher-only by default until reviewed
 
 ## Fail Notes
 
@@ -190,6 +215,7 @@ Record any issue in the test log:
 - draft did not write
 - Google Doc did not generate
 - Google Doc link did not write back
+- review status did not update
 - review queue did not rebuild
 - program tracker did not rebuild
 - audit row missing
